@@ -1,24 +1,65 @@
-/* Base styles */
+/* Base styles for all pages */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #e0eafc, #cfdef3);
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
+  position: relative;
+  color: #fff;
+  z-index: 0;
+}
+
+/* Shared background overlay setup */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 1;
+}
+
+/* Page-specific background images */
+body.home-page::before {
+  background-image: url('/static/bg-home..jpeg');
+}
+
+body.register-page::before {
+  background-image: url('/static/bg-register..jpg');
+}
+
+body.user-page::before {
+  background-image: url('/static/bg-user..jpg');
+}
+
+/* Optional: Styling for content boxes */
+.content {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .container {
-  background-color: #fff;
-  margin-top: 60px;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.85); /* semi-transparent white */
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* Headings */
